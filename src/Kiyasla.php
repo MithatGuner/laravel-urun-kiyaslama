@@ -28,6 +28,13 @@ class Kiyasla
     {
     	return $this->instance->ofUser($user_id)->get();
     }
+	
+	 public function getUserKiyaslaKucuktenBuyuge($user_id)
+    {
+    	return $this->instance->ofUser($user_id)
+		->orderBy('id', 'asc')
+		->get();
+    }
 
     public function remove($id)
     {
@@ -63,5 +70,6 @@ class Kiyasla
         return $this->instance->byProduct($product_id)
                               ->ofUser($user_id)->first();
     }
+	
 
 }
